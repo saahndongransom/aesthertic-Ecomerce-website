@@ -1,0 +1,26 @@
+<!-- process_payment.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <script src="{% static 'redirect.js' %}"></script>
+</head>
+<body>
+    <div id="approval_url" style="display: none;">{{ approval_url }}</div>
+    <p>Redirecting to PayPal...</p>
+</body>
+<script>
+    // redirect.js
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the approval URL from the response
+    var response = JSON.parse(document.getElementById('approval_url').textContent);
+    var approvalUrl = response.approval_url;
+    
+    // Redirect the user to the PayPal approval URL
+    window.location.href = approvalUrl;
+});
+
+</script>
+</html>

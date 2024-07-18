@@ -1,0 +1,20 @@
+<!-- process_payment.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PayPal Payment Processing</title>
+</head>
+<body>
+    <h1>PayPal Payment Processing</h1>
+    <!-- Your PayPal payment processing form goes here -->
+    <form id="paypal-payment-form" method="post" action="{% url 'paypal_process_payment' %}">
+        {% csrf_token %}
+        <!-- Include necessary form fields for payment processing -->
+        <input type="hidden" name="product_id" value="{{ product_id }}">
+        <input type="hidden" name="amount" value="{{ amount }}">
+        <!-- Other form fields as needed -->
+        <button type="submit">Pay with PayPal</button>
+    </form>
+</body>
+</html>
