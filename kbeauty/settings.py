@@ -153,7 +153,7 @@ EMAIL_USE_TLS = True  # Use secure connection
 
 # Required for authentication if not using django-email-backend
 EMAIL_HOST_USER = 'saahndongransom@gmail.com'
-EMAIL_HOST_PASSWORD = 'tpop wxnl ynzj hptr'
+EMAIL_HOST_PASSWORD = ''
 
 from decouple import config
 
